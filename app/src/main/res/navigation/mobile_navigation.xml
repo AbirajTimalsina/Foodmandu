@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.foodmandu.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_myfavourite"
+        android:name="com.example.foodmandu.ui.MyFavourites.MyFavouriteFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_myfavourites" />
+
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="com.example.foodmandu.ui.Notification.NotificationFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_more"
+        android:name="com.example.foodmandu.ui.more.ToolsFragment"
+        android:label="@string/menu_tools"
+        tools:layout="@layout/fragment_tools" />
+
+    <fragment
+        android:id="@+id/nav_orderhistory"
+        android:name="com.example.foodmandu.ui.OrderHistory.OrderHistoryFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_orderHistory" />
+
+    <fragment
+        android:id="@+id/nav_mybasket"
+        android:name="com.example.foodmandu.ui.MyBasket.MyBasketFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_mybasket" />
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.foodmandu.SignupFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup" />
+</navigation>
