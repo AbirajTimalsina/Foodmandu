@@ -1,5 +1,6 @@
-package com.example.foodmandu.ui.MyBasket;
+package com.example.foodmandu.ui.More;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +14,11 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.foodmandu.R;
+import com.example.foodmandu.SignupFragment;
 
-public class MyBasketFragment extends Fragment {
+public class MoreFragment extends Fragment implements View.OnClickListener {
 
+     TextView tvReg;
     private SendViewModel sendViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -23,13 +26,14 @@ public class MyBasketFragment extends Fragment {
         sendViewModel =
                 ViewModelProviders.of(this).get(SendViewModel.class);
         View root = inflater.inflate(R.layout.fragment_mybasket, container, false);
-        final TextView textView = root.findViewById(R.id.text_send);
-        sendViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        tvReg = root.findViewById(R.id.tvReg);
         return root;
     }
+
+    @Override
+    public void onClick(View v) {
+//        Intent intent = new Intent(MoreFragment.this, SignupFragment.class);
+//        startActivity(intent);
+    }
 }
+

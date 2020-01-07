@@ -34,14 +34,14 @@ public class SplashActivity extends AwesomeSplash {
         // logo
         configSplash.setLogoSplash(R.drawable.foodmandu);
 
-        configSplash.setAnimLogoSplashDuration(3000);
+        configSplash.setAnimLogoSplashDuration(2000);
         configSplash.setAnimLogoSplashTechnique(Techniques.FadeIn);
 
         //title
         configSplash.setTitleSplash(" Food Mandu");
         configSplash.setTitleTextColor(R.color.white);
         configSplash.setTitleTextSize(30f);
-        configSplash.setAnimTitleDuration(3000);
+        configSplash.setAnimTitleDuration(1000);
         configSplash.setAnimTitleTechnique(Techniques.FlipInX);
     }
 
