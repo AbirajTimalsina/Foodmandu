@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/food"
-    tools:context=".SignupFragment">
+    tools:context=".ui.SignupActivity">
 
 
     <TextView
@@ -22,16 +22,36 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etusername"
+        android:layout_width="380dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="100dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:theme="@style/myEditTextStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_lock_white_24dp"
+            android:hint="Username"
+            android:textSize="25dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/Etmail"
         android:layout_width="386dp"
         android:layout_height="75dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:theme="@style/myEditTextStyle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/etusername">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -46,7 +66,7 @@
         android:layout_width="380dp"
         android:layout_height="74dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="304dp"
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:theme="@style/myEditTextStyle"
@@ -75,16 +95,17 @@
         app:layout_constraintTop_toBottomOf="@+id/Etpass" />
 
     <Button
-        android:id="@+id/BtnReg"
-        android:layout_width="176dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/btnRegister"
+        android:layout_width="174dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="72dp"
         android:background="@drawable/bg_button"
         android:text="Register"
         android:textColor="@color/white"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Etpass" />
 
 

@@ -33,21 +33,18 @@
         android:id="@+id/nav_orderhistory"
         android:name="com.example.foodmandu.ui.Notification.NotificationFragment"
         android:label="@string/menu_share"
-        tools:layout="@layout/fragment_orderHistory" />
+        tools:layout="@layout/fragment_orderhistory" />
 
     <fragment
         android:id="@+id/nav_mybasket"
         android:name="com.example.foodmandu.ui.More.MoreFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_mybasket" />
-    <fragment
-        android:id="@+id/signupFragment"
-        android:name="com.example.foodmandu.SignupFragment"
-        android:label="fragment_signup"
-        tools:layout="@layout/fragment_signup" />
+
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.foodmandu.LoginFragment"
         android:label="fragment_login2"
         tools:layout="@layout/fragment_login2" />
+
 </navigation>
