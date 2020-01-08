@@ -42,7 +42,7 @@ public class SplashActivity extends AwesomeSplash {
         configSplash.setTitleTextColor(R.color.white);
         configSplash.setTitleTextSize(30f);
         configSplash.setAnimTitleDuration(1000);
-        configSplash.setAnimTitleTechnique(Techniques.FlipInX);
+        configSplash.setAnimTitleTechnique(Techniques.FadeInUp);
     }
 
     @Override

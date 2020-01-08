@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -18,9 +19,135 @@
 
  <androidx.constraintlayout.widget.ConstraintLayout
      android:layout_width="match_parent"
-     android:layout_height="wrap_content">
+     android:layout_height="165dp"
+     android:layout_alignParentStart="true"
+     android:layout_alignParentEnd="true"
+     android:layout_alignParentBottom="true"
+     android:layout_marginStart="0dp"
+     android:layout_marginEnd="0dp"
+     android:layout_marginBottom="352dp">
+
+<!--  <HorizontalScrollView-->
+<!--      android:layout_width="match_parent"-->
+<!--      android:layout_height="wrap_content">-->
+
+  <ImageButton
+      android:id="@+id/imageButton"
+      android:layout_width="74dp"
+      android:layout_height="86dp"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/bg_imgbtn"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_restaurant_black_24dp" />
+
+  <ImageButton
+      android:id="@+id/imageButton1"
+      android:layout_width="71dp"
+      android:layout_height="85dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/bg_imgbtn"
+      app:layout_constraintStart_toEndOf="@+id/imageButton"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_local_bar_black_24dp" />
+
+  <ImageButton
+      android:id="@+id/imageButton2"
+      android:layout_width="74dp"
+      android:layout_height="84dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/bg_imgbtn"
+      app:layout_constraintStart_toEndOf="@+id/imageButton1"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_cake_black_24dp" />
+
+  <ImageButton
+      android:id="@+id/imageButton3"
+      android:layout_width="74dp"
+      android:layout_height="83dp"
+      android:layout_marginStart="12dp"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/bg_imgbtn"
+      app:layout_constraintStart_toEndOf="@+id/imageButton2"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_local_cafe_black_24dp" />
 
 
+  <ImageButton
+      android:id="@+id/imageButton4"
+      android:layout_width="74dp"
+      android:layout_height="83dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="16dp"
+      android:background="@drawable/bg_imgbtn"
+      app:layout_constraintStart_toEndOf="@+id/imageButton3"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_filter_vintage_black_24dp" />
+
+  <TextView
+      android:id="@+id/textView2"
+      android:layout_width="75dp"
+      android:layout_height="30dp"
+      android:layout_marginStart="12dp"
+      android:layout_marginTop="4dp"
+      android:text="Resturant"
+      android:textSize="16dp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
+  <TextView
+      android:id="@+id/textView5"
+      android:layout_width="60dp"
+      android:layout_height="32dp"
+      android:layout_marginStart="24dp"
+      android:layout_marginTop="4dp"
+      android:text="Loquors"
+      android:textSize="16dp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toEndOf="@+id/textView2"
+      app:layout_constraintTop_toBottomOf="@+id/imageButton1" />
+
+  <TextView
+      android:id="@+id/textView6"
+      android:layout_width="95dp"
+      android:layout_height="34dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="4dp"
+      android:text="Refreshment"
+      android:textSize="16dp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toEndOf="@+id/textView4"
+      app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
+
+
+  <TextView
+      android:id="@+id/textView8"
+      android:layout_width="59dp"
+      android:layout_height="34dp"
+      android:layout_marginStart="12dp"
+      android:layout_marginTop="4dp"
+      android:text="Organic"
+      android:textSize="16dp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toEndOf="@+id/textView6"
+      app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+
+  <TextView
+      android:id="@+id/textView4"
+      android:layout_width="65dp"
+      android:layout_height="31dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="4dp"
+      android:text="Bakaries"
+      android:textSize="16dp"
+      android:textStyle="bold"
+      app:layout_constraintStart_toEndOf="@+id/textView5"
+      app:layout_constraintTop_toBottomOf="@+id/imageButton2" />
+  <!--  </HorizontalScrollView>-->
  </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
