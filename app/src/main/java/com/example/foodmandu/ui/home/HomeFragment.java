@@ -13,17 +13,25 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodmandu.MainActivity;
 import com.example.foodmandu.R;
+import com.example.foodmandu.adapter.CategoriesAdapter;
+import com.example.foodmandu.model.Contacts;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
     CarouselView carouselView;
+    RecyclerView recyclerView;
 
-    int[] sampleImages = {R.drawable.add1, R.drawable.add2, R.drawable.add3, R.drawable.add4};
+    int[] sampleImages = {R.drawable.coke,R.drawable.add1,R.drawable.real, R.drawable.add2, R.drawable.add3, R.drawable.add4};
     private HomeViewModel homeViewModel;
 
 
@@ -33,7 +41,19 @@ public class HomeFragment extends Fragment {
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        carouselView = root.findViewById(R.id.carouselView);
+        carouselView = root.findViewById(R.id.cara1);
+        recyclerView = root.findViewById(R.id.recycle1);
+
+        List<Contacts> contacts = new ArrayList<>();
+        contacts.add(new Contacts("Resturants",R.drawable.ic_restaurant_black_24dp));
+        contacts.add(new Contacts("Liquors",R.drawable.ic_local_bar_black_24dp));
+        contacts.add(new Contacts("Backaries",R.drawable.ic_cake_black_24dp));
+        contacts.add(new Contacts("Refreshment",R.drawable.ic_local_cafe_black_24dp));
+        contacts.add(new Contacts("Organic",R.drawable.ic_filter_vintage_black_24dp));
+
+        CategoriesAdapter categoriesAdapter = new CategoriesAdapter(getContext(),contacts);
+        recyclerView.setAdapter(categoriesAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
 
         carouselView.setPageCount(sampleImages.length);
         carouselView.setImageListener(new ImageListener() {
@@ -42,7 +62,6 @@ public class HomeFragment extends Fragment {
                 imageView.setImageResource(sampleImages[position]);
             }
         });
-
 
         return root;
     }

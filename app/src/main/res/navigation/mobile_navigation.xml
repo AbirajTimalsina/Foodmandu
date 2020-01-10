@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/nav_notification"
-        android:name="com.example.foodmandu.ui.myBasket.myBasketFragment"
+        android:name="com.example.foodmandu.ui.myBasket.MyBasketFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 

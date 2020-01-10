@@ -38,7 +38,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class SignupActivity extends AppCompatActivity implements View.OnClickListener {
+public class SignupActivity extends AppCompatActivity  {
 
 
     public Button btnReg;
@@ -60,9 +60,15 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         etPass = findViewById(R.id.etRegPass);
         btnReg = findViewById(R.id.btnReg);
         tvCacnel = findViewById(R.id.tvCancel);
-        tvCacnel.setOnClickListener(this);
 
-        btnReg.setOnClickListener(this);
+
+        tvCacnel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         imgProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,15 +77,14 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
             }
         });
 
-    }
+        btnReg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SaveImageOnly();
+                Register();
+            }
+        });
 
-    @Override
-    public void onClick(View v) {
-
-        Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
-        startActivity(intent);
-
-        Register();
     }
 
 
@@ -146,6 +151,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
         MultipartBody.Part body = MultipartBody.Part.createFormData("imageFile",
                 file.getName(), requestBody);
+
         UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
         Call<ImageResponse> responseBodyCall = usersAPI.uploadImage(body);
 
@@ -153,8 +159,13 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
         try{
             Response<ImageResponse> imageResponseResponse = responseBodyCall.execute();
-            imageName = imageResponseResponse.body().getFilename();
-            Toast.makeText(this, "Image inserted", Toast.LENGTH_LONG).show();
+            if(imageResponseResponse.isSuccessful()) {
+                imageName = imageResponseResponse.body().getFilename();
+                Toast.makeText(this, "Image inserted" + imageName, Toast.LENGTH_LONG).show();
+            }
+            else{
+                Toast.makeText(this, "Error" + imageResponseResponse.code(), Toast.LENGTH_SHORT).show();
+            }
         } catch (IOException e) {
             Toast.makeText(this, "Error"+ e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
             e.printStackTrace();
