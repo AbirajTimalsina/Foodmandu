@@ -23,6 +23,7 @@ import com.example.foodmandu.adapter.CategoriesAdapter;
 import com.example.foodmandu.adapter.SpotAdapter;
 import com.example.foodmandu.model.Contacts;
 import com.example.foodmandu.model.Spot;
+import com.example.foodmandu.ui.fragments.first_fragment;
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
@@ -79,6 +80,8 @@ public class HomeFragment extends Fragment {
                 imageView.setImageResource(sampleImages[position]);
             }
         });
+       getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                new first_fragment()).commit();
 
         return root;
     }

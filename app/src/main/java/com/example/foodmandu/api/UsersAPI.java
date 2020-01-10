@@ -3,8 +3,11 @@ package com.example.foodmandu.api;
 import android.media.ImageReader;
 
 import com.example.foodmandu.model.UsersCUD;
+import com.example.foodmandu.model.first_advertise;
 import com.example.foodmandu.serverresponse.ImageResponse;
 import com.example.foodmandu.serverresponse.SignUpResponse;
+
+import java.util.List;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
@@ -33,6 +36,11 @@ public interface UsersAPI {
 
     @GET("users/me")
     Call<UsersCUD> getUserDetails(@Header("Authorization")String token);
+
+    @GET("adver/all")
+    Call<List<first_advertise>> getAdvertise();
+
+
 
 
 
