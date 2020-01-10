@@ -18,7 +18,7 @@ public class LoginBLL {
         Call<SignUpResponse> usersCall = usersAPI.checkUser(username,password);
         try {
             Response<SignUpResponse> loginResponse = usersCall.execute();
-            if(loginResponse.isSuccessful()){
+            if(loginResponse.isSuccessful() && loginResponse.body().getStatus().equals("Login success!")){
                 Url.token += loginResponse.body().getToken();
                 isSuccess = true;
             }

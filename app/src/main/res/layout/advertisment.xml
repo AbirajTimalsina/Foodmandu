@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="411dp"
+        android:layout_height="362dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="match_parent"
+            android:layout_height="215dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/pasta" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="220dp"
+            android:text="Title"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="216dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="260dp"
+            android:text="Country"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="231dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="300dp"
+            android:text="Location"
+            android:textSize="25dp" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="136dp"
+            android:layout_height="112dp"
+            android:layout_marginTop="220dp"
+            app:srcCompat="@drawable/coke" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

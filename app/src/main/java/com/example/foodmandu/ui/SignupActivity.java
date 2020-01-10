@@ -88,30 +88,7 @@ public class SignupActivity extends AppCompatActivity  {
     }
 
 
-    private void Register() {
-        String username = etusername.getText().toString();
-        String firstname = etFirstname.getText().toString();
-        String lastname = etLastname.getText().toString();
-        String password = etPass.getText().toString();
 
-
-        UsersCUD users = new UsersCUD(username, firstname, lastname, password,imageName);
-
-        UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
-        Call<SignUpResponse> signUpCall = usersAPI.registerUser(users);
-
-        signUpCall.enqueue(new Callback<SignUpResponse>() {
-            @Override
-            public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
-                Toast.makeText(SignupActivity.this, "Registered Sucessfully", Toast.LENGTH_LONG).show();
-            }
-
-            @Override
-            public void onFailure(Call<SignUpResponse> call, Throwable t) {
-                Toast.makeText(SignupActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-            }
-        });
-    }
 
     private void BrowseImage() {
         Intent intent = new Intent(Intent.ACTION_PICK);
@@ -123,14 +100,17 @@ public class SignupActivity extends AppCompatActivity  {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == RESULT_OK) {
-            if (data == null) {
-                Toast.makeText(this, "Please select an image ", Toast.LENGTH_SHORT).show();
-            }
+        if (resultCode == RESULT_OK && data!=null) {
+
+            Uri uri = data.getData();
+            imgProfile.setImageURI(uri);
+            imagePath = getRealPathFromUri(uri);
+
         }
-        Uri uri = data.getData();
-        imgProfile.setImageURI(uri);
-        imagePath = getRealPathFromUri(uri);
+        else{
+            Toast.makeText(this, "Please select an image ", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     private String getRealPathFromUri(Uri uri) {
@@ -170,6 +150,31 @@ public class SignupActivity extends AppCompatActivity  {
             Toast.makeText(this, "Error"+ e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
+    }
+
+    private void Register() {
+        String username = etusername.getText().toString();
+        String firstname = etFirstname.getText().toString();
+        String lastname = etLastname.getText().toString();
+        String password = etPass.getText().toString();
+
+
+        UsersCUD users = new UsersCUD(username, firstname, lastname, password,imageName);
+
+        UsersAPI usersAPI = Url.getInstance().create(UsersAPI.class);
+        Call<SignUpResponse> signUpCall = usersAPI.registerUser(users);
+
+        signUpCall.enqueue(new Callback<SignUpResponse>() {
+            @Override
+            public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
+                Toast.makeText(SignupActivity.this, "Registered Sucessfully", Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(Call<SignUpResponse> call, Throwable t) {
+                Toast.makeText(SignupActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
 
